@@ -30,7 +30,10 @@ PORT    STATE SERVICE
 
 Nmap done: 256 IP addresses (3 hosts up) scanned in 113.21 seconds
 
-Yes. The victim machine is 192.168.56.101. Next, go to check port 80. Nothing, Just a page with blanks and wried characters. If you notice you will see the file with extension php. Just REMEMBER !!!.
+
+Yes. The victim machine is 192.168.56.101. Next, go to check port 80.
+Nothing, Just a page with blanks and wried characters.
+If you notice you will see the file with extension php. Just REMEMBER !!!.
 
 Time to recon, Bruteforcing Directory with extension is php
 
@@ -77,6 +80,7 @@ function control(){
 </script>
 
 it checks the pwd variable has "'" or not => I'm sure 100% a field containing a password is SQL Injection.
+
 Lazy time starts. Sqlmap will help you check either it has sqlinjection or not.
 
 root@localhost:~# sqlmap -u http://192.168.56.101/personel.php --data="kullanici_adi=ikaya%40btrisk.com&parola=asdasd" -p parola --dbs
